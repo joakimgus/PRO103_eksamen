@@ -1,0 +1,339 @@
+/* Den første delen av kode på denne siden er identisk til det første rommet. Men nesten alle animasjonene er fjernet fra rommet, siden man er ferdig med ledetrådene. */
+
+/* Denne sidens hovedfokus er å åpne døren og gå videre til neste rom. */
+
+/* margin og padding til 0 på hele siden. */
+body {
+    background-color: black;
+}
+
+/* størrelse på konteineren. */
+#container{
+    width: 1200px;
+    height: 800px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    background-color: black;
+}
+
+/* Posisjon og størrelse på bakgrunns-bildet. */
+#backgroundImage{
+    width: 1200px;
+    height: 800px;
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../images/backgroundImage.png);
+    /* Posisjon */
+    z-index: 5;
+}
+
+/* Posisjon og størrelse på døra */
+#door{
+    width: 200px;
+    height: 401.915px;
+    position: absolute;
+    margin-top: 194px;
+    margin-left: 536px;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../images/door3.png);
+    /* Posisjon */
+    z-index: 10;
+    /* På denne siden kan man gå inn døren, og fortsette videre. */
+    cursor: grab;
+}
+
+/* Hover effekt så det ser ut som at døren åpner seg. */
+#door:hover {
+    transform: rotateY(15deg) skewY(15deg);
+    margin-top: 215px;
+    margin-left: 530px;
+    transition: 2.5s;
+}
+
+/* Posisjon og rotasjon på det første notatet */
+#noteOne{
+    width: 63px;
+    height: 90px;
+    position: absolute;
+    margin-top: 350px;
+    margin-left:840px;
+    transform: rotateX(78deg) rotateZ(90deg);
+    background-position: center;
+    background-size: cover;
+    background-image: url(../images/noteOne.png);
+    /* Posisjon */
+    z-index: 25;
+}
+
+#globeShadow{
+    width: 128px;
+    height: 128px;
+    position: absolute;
+    margin-top: 339px;
+    margin-left: 118px;
+    border-radius: 100%; 
+    overflow: hidden;
+    background-image: url(../images/globusSkygge.png); 
+    background-position: center;
+    background-size: contain;
+    z-index: 40;
+    opacity: 0.5;
+}
+
+/* Konteineren globeImage er inni. */
+#globe{
+    width: 128px;
+    height: 128px;
+    position: absolute;
+    margin-top: 339px;
+    margin-left: 118px;
+    border-radius: 100%; 
+    overflow: hidden;
+    background-image: url(../images/globusSkygge.png); 
+    background-position: center;
+    background-size: cover;
+    z-index: 15;
+}  
+
+/* Bilde av jordkloden. */
+#globeImage{
+    width: 400px;
+    height: 128px;
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../images/globus.png); 
+    /* Animasjons detaljer for globeImage. */
+    animation-name: globeSpin;
+    animation-duration: 70s;
+    animation-iteration-count: infinite;
+    z-index: 10;
+}
+
+/* Animasjon som flytter globeImage til venstre, som gjør at det ser ut som den spinner. */
+@keyframes globeSpin{
+    0%{}
+    100%{margin-left: -272px;}
+}
+
+/* Dotten som spinner i midten av klokken, og konteineren til clockLine som er den lange viseren i klokken. */
+#clockOne{
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    margin-top: 146px;
+    margin-left: 298px;
+    border-radius: 100%;
+    background-color: #0d0c0d;
+    animation-name: clockLineOne;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    z-index: 10;
+}
+
+/* Hører sammen med clockOne. */
+#clockLineOne{
+    width: 1px;
+    height: 15px;
+    margin-left: 1px; 
+    position: absolute;
+    background-color: #0d0c0d;
+    z-index: 10;
+}
+
+/* Den andre dotten som spinner i midten av klokken, og konteineren til clockLineTwo som er den korte viseren i klokken. */
+#clockTwo{
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    margin-top: 146px;
+    margin-left: 298px;
+    border-radius: 100%;
+    background-color: #0d0c0d;
+    animation-name: clockLineTwo;
+    animation-duration: 120s;
+    animation-iteration-count: infinite;
+    z-index: 10; 
+}
+
+/* Hører sammen med clockTwo. */
+#clockLineTwo{
+    width: 1px;
+    height: 10px;
+    margin-left: 1px; 
+    position: absolute;
+    background-color: #0d0c0d;
+    z-index: 10;
+}
+
+/* Animasjonen til den lengste viseren */
+@keyframes clockLineOne{
+    0%{transform: rotate(0deg);}
+    50%{transform: rotate(180deg);}
+    100%{transform: rotate(360deg);}  
+}
+
+/* Animasjonen til den korte viseren */
+@keyframes clockLineTwo{
+    0%{transform: rotate(0deg);}
+    50%{transform: rotate(180deg);}
+    100%{transform: rotate(360deg);}
+}
+   
+/* Label er en funksjon som ikke vises for brukeren, og man kan bruke den sammen med input for å få en knapp. */
+/* Konteineren til bildet. Begge sidene */
+#paintingLabel{
+    width: 230px;
+    height: 160px;
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 850px;
+    transform-style: preserve-3d;
+    display: block;
+    z-index: 20;
+}
+
+#painting{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* Må ha preserve-3d for at begge sidene skal vises, med hjelp av backface-visibility: hidde. */
+    transform-style: preserve-3d;
+    transition: 1.3s;
+}
+
+/* Alle divene inni diven #painting */
+#painting div{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: 5px solid black;
+    cursor: help;
+}
+
+/* Baksiden av maleriet */
+#painting #paintingBack{
+    /* Roterer baksiden så den skal være riktig i forhold til neste linje. */
+    transform: rotateX(180deg);
+    background-image: url(../images/PaintingPaper.png);
+}
+
+#paintingFront{
+    background-position: center;
+    background-size: cover;
+    background-image: url(../images/painting.jpg);
+}
+
+/* Gjemmer check-boxen til bildet og andre elementer. */
+input{
+    display: none;
+}
+
+/* Bilde av en åpen boks. */
+#lockbox{
+    width: 200px;
+    height: 130px; 
+    position: absolute;
+    margin-left: 400px;
+    margin-top: 650px;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../images/lockbox2.png);
+    opacity: 1;
+    z-index: 70;
+}
+
+/* Nøkkelen som kommer ut av boksen */
+#keys{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    margin-top: 670px;
+    margin-left: 470px;
+    background-image: url(../images/keys.png);
+    background-position: center;
+    background-size: cover;
+    z-index: 100;
+    animation-name: keys;
+    animation-duration: 6s;
+    animation-fill-mode: forwards;
+}
+
+/* animasjon til nøkkelen. */
+@keyframes keys{
+    0%{}
+    100%{margin-top: 450px;
+        width: 120px;
+        height: 120px;
+        margin-left: 350px;
+    }
+}
+
+
+/* Glow effekt rundt nøkkelen*/
+#spinContainer{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    margin-top: 690px;
+    margin-left: 490px;
+    animation-name: keySpin;
+    animation-duration: 6s;
+    animation-fill-mode: forwards;
+    z-index: 105; 
+}
+
+#spin1{
+    width: 0.05px;
+    height: 50px;
+    background-color: gold;
+    margin-left: 5px;
+    margin-top: 40px;
+    box-shadow: 0px 5px 30px 5px gold;
+    opacity: 0.2;
+}
+
+#spin2{
+    width: 0.05px;
+    height: 50px;
+    background-color: gold;
+    margin-left: 5px;
+    margin-top: -160px;
+    box-shadow: 0px 5px 30px 5px gold;
+    opacity: 0.2;
+}
+
+#spin3{
+    width: 50px;
+    height: 0.05px;
+    background-color: gold;
+    margin-left: 40px;
+    margin-top: 24px;
+    box-shadow: 0px 5px 30px 5px gold;
+    opacity: 0.2;
+}
+
+#spin4{
+    width: 50px;
+    height: 0.05px;
+    background-color: gold;
+    margin-left: -70px;
+    margin-top: -9px;
+    box-shadow: 0px 5px 30px 5px gold;
+    opacity: 0.2;
+}
+
+
+/* animasjon til glow-effekten til nøkkelen, som spinner. */
+@keyframes keySpin{
+    0%{}
+    100%{transform: rotate(630deg);
+        margin-top: 500px;
+        width: 20px;
+        height: 20px;
+        margin-left: 400px;
+    }
+}

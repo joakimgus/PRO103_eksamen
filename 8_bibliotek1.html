@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8";>
+    <link rel="stylesheet" type="text/css" href="css/8_bibliotek1.css">
+</head>
+<body>
+    
+    <audio autoplay>
+            <source autoplay="autoplay" src="sounds/screamSound.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- Kontainer til rommet, hvor alle elementene er inni. -->
+    <div id="container">
+        
+        <!-- Bilde av biblioteket, hoved bildet. -->
+        <div id="backgroundImage"></div>
+        
+        <!-- Bilde av døren. -->
+        <div id="door"></div>
+        
+        <!-- Bilde bak døren, som kommer ut og skremmer oss. -->
+        <div id="scaryImage"></div>
+        
+        <div id="jumpscare"></div>
+        
+        <!-- Bilde av det første notatet. -->
+        <div id="noteOne"></div>
+        
+        <!-- globus, div-konteiner til globus og bilde. -->
+        <div id="globeShadow"></div>
+        <div id="globe">
+            <div id="globeImage"></div>
+        </div>
+        <!-- Viserne til klokken, og "clockOne" som er en dott i midten som gjør at alt spinner -->
+        <div id="clockOne">
+            <div id="clockLineOne"></div>
+        </div>
+        <!-- Den andre viserne til klokken, og "clockTwo" som er en dott i midten som gjør at alt spinner -->
+        <div id="clockTwo">
+            <div id="clockLineTwo"></div>
+        </div>
+        <!-- Maleriet, alle sidene + label/checkbox. -->
+        <label id="paintingLabel">
+            <input type="checkbox">
+            <div id="painting">
+                <div id="paintingFront"></div>
+                <div id="paintingBack">
+                    <a id="paintingBtn" href="#noteTwo"></a>
+                    <p id="paintingText">Ta på hånden hvis du søker etter skatten</p>
+                </div>
+            </div>
+        </label>
+        
+        <div id="clockBtnContainer">
+            <a id="noteTwo" href="#clockBtn">
+            <p id="noteText">Hvis du løser denne gåten så finner du neste ledetråd:</p>
+            <p id="noteText2">Hva er det som går og går, men aldri kommer til døren?</p>
+            </a>
+        </div>
+        
+        <a id="clockBtn" href="#lockbox"></a>
+        
+        <a id="lockbox" href="9_laas.html"></a>
+    </div>
+    
+</body>
+</html>

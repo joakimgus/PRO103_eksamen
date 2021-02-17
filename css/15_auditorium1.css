@@ -1,0 +1,160 @@
+body{
+    background-color: black;
+}
+
+main{
+    width: 1200px;
+    height: 800px;
+    border: 2px solid rgb(16, 16, 16);
+    position: relative;
+    background-color: black;
+    margin: auto;
+  }   
+   /* Størrelse på selve bildet i spillet*/ 
+#bilde{
+    width: 1200px;
+    height: 800px;
+    background-image: url("../images/auditorie.png");
+    background-size: 1200px 800px;
+}
+.inMain
+
+{
+    position: absolute;
+}
+/* Størrelsen på beskjeden*/
+#clue
+{
+    width: 100%;
+    height: 100%;
+}
+/* Størrelse og plasseringen av fjernkontrollen samt animasjonen, også lager animation */
+#fjernkontroll
+{
+    width: 20px;
+    height: 30px;
+    left: 620px;
+    top: 655px;
+
+
+}
+/* elementer for block*/
+#block{
+    width: 300px;
+    height: 600px;
+    left:295px;
+    top: 460px;
+    border: 2px solid red;
+}
+
+
+#lampeBox1 {
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    margin-top: 3px;
+    margin-left: 350px;
+    z-index: 10;
+    animation-name: lampe;
+    animation-duration: 35s;
+    animation-iteration-count: infinite;
+    transform: rotate(5deg); 
+}
+/* elementer for lampe1*/
+#lampe1{
+    height: 129px;
+    width: 64px;
+    position: absolute;
+    background-image: url("../images/lampe11.png");
+    margin-left: -26px;
+}
+ /* elementer for lampebox 2*/
+#lampeBox2 {
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    margin-top: 120px;
+    margin-left: 1020px;
+    z-index: 10;
+    animation-name: lampe;
+    animation-duration: 35s;
+    animation-iteration-count: infinite;
+    transform: rotate(5deg); 
+}
+#chairActive
+{
+    left: 650px;
+    top: 653px;
+    opacity: 0.0;
+}
+/* hover effekt,når man drar musa over*/
+#chairActive:hover
+{
+    opacity: 1.0;
+}
+#lampe2{
+    height: 79px;
+    width: 32px;
+    position: absolute;
+    background-image: url("../images/lampe12.png");
+    margin-left: -15px;
+}
+
+#lampeBox3 {
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    top: 110px;
+    left: 360px;
+    z-index: 9;
+    animation-name: lampe;
+    animation-duration: 35s;
+    animation-iteration-count: infinite;
+    transform: rotate(5deg); 
+}
+
+#lampe3{
+    height: 79px;
+    width: 32px;
+    position: absolute;
+    background-image: url("../images/lampe13.png");
+    margin-left: -15px;
+}
+/* svinge animasjon for lampe*/
+@keyframes lampe{
+    0%{transform: rotate(5deg);}
+    10%{transform: rotate(-5deg);}
+    20%{transform: rotate(5deg);}
+    30%{transform: rotate(-5deg);}
+    40%{transform: rotate(5deg);}
+    50%{transform: rotate(-5deg);}
+    60%{transform: rotate(5deg);}
+    70%{transform: rotate(-5deg);}
+    80%{transform: rotate(5deg);}
+    90%{transform: rotate(-5deg);}
+    100%{transform: rotate(5deg);}
+}
+
+
+#exit{
+/* plassering og størrelse av div på dør på venstre side*/
+  width: 50px;
+  height: 60px;
+ left: 215px;
+ top: 400px;
+
+}
+/*shadow på døren og animasjon på døren når clue har kommet opp og man kan gå videre*/
+#doorShadow{
+ width: 52px;
+ height: 62px;
+ left: 213px;
+ top: 400px;
+ background-color: black;
+ opacity: 0.8;
+    
+ animation-name: enableExit;
+ animation-duration: 0.5s;
+ animation-delay: 3.2s;
+ animation-fill-mode: forwards;
+   }

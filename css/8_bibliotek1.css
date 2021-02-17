@@ -1,0 +1,462 @@
+/* margin og padding til 0 på hele siden. */
+body {
+    background-color: black;
+}
+
+/* størrelse på konteineren. */
+#container{
+    width: 1200px;
+    height: 800px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    background-color: black;
+    z-index: 2; 
+}
+
+/* En dame som kommer ut bak døren */
+#scaryImage{
+    height: 275px;
+    width: 160px;
+    position: absolute;
+    margin-top: 250px;
+    margin-left: 575px;
+    transform: rotate(10deg);
+    background-image: url(../images/scaryImage.png);
+    background-position: center;
+    background-size: cover;
+    z-index: 6;
+    animation-name: scaryAnimation;
+    animation-duration: 10s;
+    animation-delay: 15s;
+    animation-iteration-count: 1;
+}
+
+@keyframes scaryAnimation{
+    0%{}
+    70%{margin-left: 610px;
+    transform: rotate(28deg);}
+    100%{}
+}
+
+/* En jumpscare som kommer etter 25s. */
+#jumpscare{
+    width: 1200px;
+    height: 800px;
+    position: absolute;
+    animation-name: jumpscare;
+    animation-delay: 25s;
+    animation-iteration-count: 1;
+    animation-duration: 4s;
+    z-index: 1; 
+}
+
+@keyframes jumpscare{
+    0%{}
+    100%{z-index: 100;
+    background-image: url(../images/theNun.png);
+    background-size: cover;
+    background-position: center;}
+}
+
+
+/* Posisjon og størrelse på bakgrunns-bildet. */
+#backgroundImage{
+    width: 1200px;
+    height: 800px;
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../images/backgroundImage.png);
+    /* Posisjon */
+    z-index: 5;
+}
+
+/* Posisjon og størrelse på døra */
+#door{
+    width: 200px;
+    height: 401.915px;
+    position: absolute;
+    margin-top: 194px;
+    margin-left: 536px;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../images/door3.png);
+    animation-name: doorAnimation;
+    animation-duration: 10s;
+    animation-delay: 15s;
+    animation-iteration-count: 1;
+    /* Posisjon */
+    z-index: 10;
+    /* Man kan ikke gå inn i døren enda, så jeg bruker en not-allowed peker for å vise det. */
+    cursor: not-allowed;
+}
+
+/* Animasjon til døren, skal matche med en jente som ser ut, og så skal en jumpscare komme. */
+@keyframes doorAnimation{
+    0%{}
+    70%{transform: rotateY(15deg) skewY(15deg);
+    margin-top: 218px;
+    margin-left: 530px;}
+    100%{}
+}
+
+/* Posisjon og rotasjon på det første notatet */
+#noteOne{
+    width: 63px;
+    height: 90px;
+    position: absolute;
+    margin-top: 350px;
+    margin-left:840px;
+    transform: rotateX(78deg) rotateZ(90deg);
+    background-position: center;
+    background-size: cover;
+    background-image: url(../images/noteOne.png);
+    /* Posisjon */
+    z-index: 25;
+    cursor: grabbing
+}
+
+/* Første notat, hover, endrer posisjon og størrelse */
+#noteOne:hover{
+    width: 300px;
+    height: 400px;
+    margin-top: 300px;
+    margin-left: 740px;
+    transform: rotateX(0deg) rotateZ(0deg);
+    transition: 2s;
+    /* Posisjon */
+}
+
+#globeShadow{
+    width: 128px;
+    height: 128px;
+    position: absolute;
+    margin-top: 339px;
+    margin-left: 118px;
+    border-radius: 100%; 
+    overflow: hidden;
+    background-image: url(../images/globusSkygge.png); 
+    background-position: center;
+    background-size: contain;
+    z-index: 40;
+    opacity: 0.5;
+}
+
+/* Konteineren globeImage er inni. */
+#globe{
+    width: 128px;
+    height: 128px;
+    position: absolute;
+    margin-top: 339px;
+    margin-left: 118px;
+    border-radius: 100%; 
+    overflow: hidden;
+    background-image: url(../images/globusSkygge.png); 
+    background-position: center;
+    background-size: cover;
+    z-index: 15;
+}  
+
+/* Bilde av jordkloden. */
+#globeImage{
+    width: 400px;
+    height: 128px;
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../images/globus.png); 
+    /* Animasjons detaljer for globeImage. */
+    animation-name: globeSpin;
+    animation-duration: 70s;
+    animation-iteration-count: infinite;
+    z-index: 10;
+}
+
+/* Animasjon som flytter globeImage til venstre, som gjør at det ser ut som den spinner. */
+@keyframes globeSpin{
+    0%{}
+    100%{margin-left: -272px;}
+}
+
+/* Dotten som spinner i midten av klokken, og konteineren til clockLine som er den lange viseren i klokken. */
+#clockOne{
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    margin-top: 146px;
+    margin-left: 298px;
+    border-radius: 100%;
+    background-color: #0d0c0d;
+    animation-name: clockLineOne;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    z-index: 10;
+}
+
+/* Hører sammen med clockOne. */
+#clockLineOne{
+    width: 1px;
+    height: 15px;
+    margin-left: 1px; 
+    position: absolute;
+    background-color: #0d0c0d;
+    z-index: 10;
+}
+
+/* Den andre dotten som spinner i midten av klokken, og konteineren til clockLineTwo som er den korte viseren i klokken. */
+#clockTwo{
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    margin-top: 146px;
+    margin-left: 298px;
+    border-radius: 100%;
+    background-color: #0d0c0d;
+    animation-name: clockLineTwo;
+    animation-duration: 120s;
+    animation-iteration-count: infinite;
+    z-index: 10; 
+}
+
+/* Hører sammen med clockTwo. */
+#clockLineTwo{
+    width: 1px;
+    height: 10px;
+    margin-left: 1px; 
+    position: absolute;
+    background-color: #0d0c0d;
+    z-index: 10;
+}
+
+/* Animasjonen til den lengste viseren */
+@keyframes clockLineOne{
+    0%{transform: rotate(0deg);}
+    50%{transform: rotate(180deg);}
+    100%{transform: rotate(360deg);}  
+}
+
+/* Animasjonen til den korte viseren */
+@keyframes clockLineTwo{
+    0%{transform: rotate(0deg);}
+    50%{transform: rotate(180deg);}
+    100%{transform: rotate(360deg);}
+}
+   
+/* Label er en funksjon som ikke vises for brukeren, og man kan bruke den sammen med input for å få en knapp. */
+/* Konteineren til bildet. Begge sidene */
+#paintingLabel{
+    width: 230px;
+    height: 160px;
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 850px;
+    transform-style: preserve-3d;
+    display: block;
+    z-index: 20;
+}
+
+#painting{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* Må ha preserve-3d for at begge sidene skal vises, med hjelp av backface-visibility: hidde. */
+    transform-style: preserve-3d;
+    transition: 1.3s;
+}
+
+/* Alle divene inni diven #painting */
+#painting div{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: 5px solid black;
+    cursor: help;
+}
+
+#paintingFront{
+    background-position: center;
+    background-size: cover;
+    background-image: url(../images/painting.jpg);
+}
+
+/* Baksiden av maleriet */
+#painting #paintingBack{
+    /* Roterer baksiden så den skal være riktig i forhold til neste linje. */
+    transform: rotateX(180deg);
+    background-image: url(../images/PaintingPaper.png);
+    cursor: grab;
+    opacity: 0;
+}
+
+/* Roterer alle sidene 180deg og siden baksiden allerede er rotert så blir den riktig vei. */
+:checked + #painting{
+    transform: rotateX(180deg);
+}
+
+:checked + #painting > #paintingFront{
+    opacity: 0;
+    transition: 0.5s;
+}
+
+:checked + #painting > #paintingBack{
+    opacity: 1;
+    transition: 0.5s;
+}
+
+
+label:hover #painting{
+    transform: rotateX(15deg);
+    box-shadow: 0px 16px 15px black;
+} 
+
+label:hover :checked + #painting{
+    transform: rotateX(180deg);
+    box-shadow: 0px 0px 0px black;
+}
+
+/* Teksten bak bildet. */
+#paintingText{
+    position: absolute;
+    font-size: 23px;
+    text-align: center;
+    margin-top: 75px;
+    color: darkred;
+    font-weight: 700;
+    font-family: courier;
+}
+
+/* Gjemmer check-boxen til bildet og andre elementer. */
+input{
+    display: none;
+}
+
+/* En knapp som får opp det andre notatet. */
+#paintingBtn{
+    width: 50px;
+    height: 70px;
+    margin-left: 90px;
+    margin-top: 10px;
+    position: absolute;
+    display: block;
+    background-image: url(../images/bloody.png);
+    background-position: center;
+    background-size: cover;
+    z-index: 40;
+
+}
+
+/* når man trykker på notatet så vil det komme en usynlig box over klokken. */
+#noteTwo:target{
+    width: 63px;
+    height: 90px;
+    opacity: 1;
+    transition: 2s;
+}
+
+/* Posisjon og størrelse til det andre notatet, har ikke skrevet width og height fordi det skal ikke eksistere før man trykker på paintingBtn. */
+#noteTwo{
+    position: absolute;
+    margin-top: 482px;
+    margin-left: 1080px;
+    transform: rotateX(62deg) rotateZ(-30deg) skewY(30deg);
+    background-image: url(../images/PaintingPaper.png);
+    background-position: center;
+    background-size: cover;
+    z-index: 60;
+    opacity: 0;
+    text-decoration: none;
+}
+
+#noteText{
+    opacity: 0;
+    z-index: 65;
+    font-size: 30px;
+    color: black;
+    font-family: courier;
+    position: absolute;
+    margin-top: 35px;
+    margin-left: 7px;
+    margin-right: 7px;
+    text-align: center;
+}
+
+#noteText2{
+    opacity: 0;
+    z-index: 65;
+    font-size: 30px;
+    color: black;
+    font-family: courier;
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 7px;
+    margin-right: 7px;
+    text-align: center;
+}
+
+/* Hover effect for noteTwo */
+#noteTwo:hover{
+    width: 300px;
+    height: 400px;
+    margin-top: 320px;
+    margin-left: 810px;
+    transform: rotateX(0deg) rotateZ(0deg) skewY(0deg);
+    cursor: help;
+}
+
+/* Hover effekt som gjør at man ser teksten på det andre notatet etter 3s. */
+#noteTwo:hover > #noteText{
+    opacity: 0.65;
+    transition: 1.5s;
+    transition-delay: 1.5s;
+}
+
+#noteTwo:hover > #noteText2{
+    opacity: 0.65;
+    transition: 1.5s;
+    transition-delay: 1.5s;
+}
+
+/* knappen på klokken som får opp boksen man skal åpne for å finne nøkkelen. */
+#clockBtn{
+    position: absolute;
+    margin-top: 130px;
+    margin-left: 282px;
+    border-radius: 100%;
+    z-index: 80;
+    opacity: 1;
+    cursor: help;
+}
+
+#clockBtn:target{
+    width: 37px;
+    height: 37px;
+    opacity: 1;
+}
+
+#lockbox:target{
+    width: 200px;
+    height: 108px; 
+    opacity: 1;
+    transition: 2s;
+}
+
+#lockbox{
+    position: absolute;
+    margin-left: 400px;
+    margin-top: 650px;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../images/lockbox.png);
+    opacity: 0;
+    z-index: 70;
+}
+
+#lockbox:hover{
+    width: 600px;
+    height: 324px;
+    margin-left: 325px;
+    margin-top: 400px;
+    transition: 2s;
+    cursor: help;
+}

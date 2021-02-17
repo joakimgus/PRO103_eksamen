@@ -1,0 +1,334 @@
+body
+{
+    background-color: black;
+}
+
+/*Main container med relativ posisjon til nettleservinduet.*/
+main
+{
+    width: 1200px;
+    height: 800px;
+    border: 2px solid black;
+
+    background-color: black;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+
+}
+/*bruker en <img> tag for bakgrunnsbilde på denne siden istedenfor background-image, property.*/
+/*for å gjøre det lettere å la utgangsdør bilde skli under bakgrunnsbilde. fra et område som er klippet ut.*/
+#backgroundImage
+{
+    width: 1200px;
+    height: 800px;
+}
+
+/*class som passer på at alle medlemmer av den blir posisjonert absolutt i forhold til main containeren*/
+.inMain
+{
+    position: absolute;
+}
+
+/*Her er propertiesene for de fargede flisene som blir synlige når man hoverer over dem.*/
+.tile
+{
+    opacity: 0.0;
+    z-index: 100;
+}
+.tile:hover
+{
+    opacity: 1.0;
+}
+#tileR1
+{
+    left: 414px;
+    top: 694px;
+}
+#tileR2
+{
+    left: 463px;
+    top: 647px;
+
+}
+#tileR3
+{
+    left: 493px;
+    top: 614px;
+
+}
+#tileG1
+{
+    left: 555px;
+    top: 696px;
+
+}
+#tileG2
+{
+    left: 568px;
+    top: 646px;
+
+}
+#tileG3
+{
+    left: 580px;
+    top: 614px;
+
+}
+#tileB1
+{
+    left: 670px;
+    top: 693px;
+
+}
+#tileB2
+{
+    left: 666px;
+    top: 644px;
+
+}
+#tileB3
+{
+    left: 661px;
+    top: 612px;
+
+}
+
+/*under er properties for alle piano elementene. alle knappene er mulig å hovere over for å trykke ned*/
+/*bortsett fra den røde som aktiverer ledetråden.*/
+#pianoDiv
+{
+    width: 300px;
+    height: 209px;
+    right: 150px;
+    bottom: 30px;
+}
+#piano
+{
+    width: 100%;
+    height: 100%;
+}
+.keys
+{
+    z-index: 10;
+}
+.keys:hover
+{
+    transform: translate(0px, 2px);
+}
+#keys1
+{
+    left: +182px;
+    top: +110px;
+}
+#keys2
+{
+    left: +163px;
+    top: +105px;
+}
+#keys3
+{
+    left: +145px;
+    top: +101px;
+}
+#keys4
+{
+    left: +125px;
+    top: +95px;
+}
+#keys5
+{
+    left: +105px;
+    top: +92px;
+}
+#keys6
+{
+    left: +80px;
+    top: +85px;
+}
+
+/*Den røde piano knappen spiller en animasjon når man trykker på den i første siden.*/
+#keys7
+{
+    left: +57px;
+    top: +80px;
+    
+    z-index: 111;
+
+    animation-name: fallingKeys;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-timing-function: linear;
+}
+/*falle animasjonen for den røde pianoknappen.*/
+@keyframes fallingKeys
+{
+    0%{left: +57px; top: +80px}
+    20%{left: +38px; top: +45px; transform: rotate(-90deg);}
+    60%{left: +10px; top: +180px; transform: rotate(-360deg);}
+    65%{left: +0px; top: +180px; transform: rotate(-360deg);}
+    100%{left: +0px; top: +180px; transform: rotate(-360deg);}
+}
+
+/*projektorlyset skrus på etter den øyenstikker animasjonen har spilt ferdig.*/
+#lys
+{
+    width: 0px;
+    height: 800px;
+
+    animation-name: lysAnimation;
+}
+/*og det vises en ledetråd på projektorskjermen.*/
+#clue
+{
+    left: 80px;
+    opacity: 0.0;
+    
+    animation-name: clueAnimation;
+}
+.projektor
+{
+    animation-delay: 5.2s;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+@keyframes lysAnimation
+{
+    0%{width: 1200px; opacity: 1.0}
+    25%{opacity: 0.0;}
+    50%{opacity: 1.0;}
+    60%{opacity: 0.0;}
+    100%{opacity: 1.0; width: 1200px;}
+}
+@keyframes clueAnimation
+{
+    0%{opacity: 1.0;}
+    25%{opacity: 0.0;}
+    50%{opacity: 1.0;}
+    60%{opacity: 0.0;}
+    100%{opacity: 1.0;}
+}
+
+#keys8
+{
+    left: +36px;
+    top: +75px;
+}
+#keys9
+{
+    left: +14px;
+    top: +70px;
+}
+
+/*øyenstikkeren består av to bilder som animeres oppå hverandre ved å endre opacity ser det ut som den*/
+/*flakser med vingene sine.*/
+/*i tilleg flyer den rundt i rommet før den lander på projektoren.*/
+.dragonfly
+{
+    width: 50px;
+    height: 40px;
+    left: +57px;
+    top: +80px;
+
+    opacity: 0.0;
+
+}
+#dragonfly1
+{
+    animation: dragonflyFlying 4s 1s cubic-bezier(0.5, 0.01, 0.01, 0.1) forwards, dragonflyWingsDown 0.2s 1s infinite;
+}
+#dragonfly2
+{
+    animation: dragonflyFlying 4s 1s cubic-bezier(0.5, 0.01, 0.01, 0.1) forwards, dragonflyWingsUp 0.2s 1s infinite;
+}
+@keyframes dragonflyFlying
+{
+    0%{opacity: 0.0; transform: scale(-20px, -20px);}
+    25%{opacity: 1.0; left: +70px; top: -40px; transform: rotate(15deg);}
+    30%{opacity: 1.0; left: +140px; top: -120px;transform: rotate(-15deg);}
+    40%{opacity: 1.0; left: +90px; top: -220px;transform: rotate(-25deg);}
+    50%{opacity: 1.0; left: +20px; top: -200px;transform: rotate(5deg);}
+    60%{opacity: 1.0; left: -20px; top: -240px;transform: rotate(25deg);}
+    70%{opacity: 1.0; left: -60px; top: -200px;transform: rotate(15deg);}
+    80%{opacity: 1.0; left: -80px; top: -120;transform: rotate(-5deg);}
+    90%{opacity: 1.0; left: +20px; top: -50;transform: rotate(0deg);}
+    100%{opacity: 1.0; left: -332px; top: -15px;}
+}
+@keyframes dragonflyWingsUp
+{
+    0%
+    {
+        opacity: 0.0;
+    }
+    100%
+    {
+        opacity: 1.0;
+    }
+}
+@keyframes dragonflyWingsDown
+{
+    0%
+    {
+        opacity: 1.0;
+    }
+    100%
+    {
+        opacity: 0.0;
+    }
+}
+
+/*når projektorskjermen har vist ledetråden for neste rom animeres utgangsdøren, ved så skli oppover*/
+/*og bak bakgrunnsbildet. og indikerer at brukeren kan trykke seg videre.*/
+#door
+{
+    left: 182px;
+    top: 432px;
+    
+    animation-name: doorOpen;
+    animation-duration: 2s;
+    animation-delay: 6.7s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+@keyframes doorOpen
+{
+    from
+    {
+        top: 432px;
+    }
+    to
+    {
+        top: 365px;
+    }
+}
+/*dette er properties for diven som er en link som lar brukeren gå videre.*/
+/*den starter utenfor main containeren slik at brukeren ikke kan gå videre for tidlig.*/
+/*men flytter seg til rett sted i døråpningen når døren har åpnet seg.*/
+#nextRoom
+{
+    width: 50px;
+    height: 63px;
+    left: -200px;
+    top: 433px;
+    
+    animation-name: enableExit;
+    animation-duration: 0.01s;
+    animation-delay: 8.7s;
+    animation-fill-mode: forwards;
+}
+@keyframes enableExit
+{
+    from{left: -200px;}
+    to{left: 185px;}
+}
+/*det kommer også opp en grønn pil ved døråpningen for å indikere at brukeren skal trykke der*/
+/*for å gå videre*/
+#arrow
+{
+    width: 70%;
+    left: 8px;
+    top: 15px;
+    
+    transform: scaleY(-1);
+}

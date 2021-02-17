@@ -1,0 +1,61 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(0, 0, 0);
+}
+main{
+    width: 1200px;
+    height: 800px;
+    margin: auto;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+}
+section{
+    width: 800px;
+    height: 600px;
+    left: 200px;
+    top: 300px;
+    position: absolute;  
+}
+#hkLogo{
+    background-image: url("../images/hk.logo.png"); 
+    width: 250px;
+    height: 250px;
+    background-repeat: no-repeat;
+    position: absolute; 
+}
+#hoyskolenLogo{
+    background-image: url("../images/Hoyskolen.png"); 
+    width: 500px;
+    height: 100px;
+    display: inline-block;
+    background-repeat: no-repeat; 
+    position: absolute;
+    left: 300px;
+    top: 20px;
+}
+#kristianiaLogo{
+    background-image: url("../images/Kristiania.png");
+    width: 500px;
+    height: 100px; 
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 300px;
+    top: 120px;
+}
+#universitetLogo{
+    background-image: url("../images/storUniversitetet.png");
+    width: 600px;
+    height: 100px;
+    background-repeat: no-repeat; 
+    position: absolute;
+    left: 510px;
+    top: 330px;
+    opacity: 0;
+    animation: changeName 5s 1s forwards;
+    z-index: 2;
+}
+@keyframes changeName{
+    0%   {top: 0px; left:510px; opacity: 0;}
+    100% {top: 328px; left: 510px; opacity: 1;}
+}

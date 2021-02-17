@@ -1,0 +1,63 @@
+body {
+	background-color: black;
+}
+
+/* main container*/
+.main {
+	width: 1200px;
+	height: 800px;
+	position: relative;
+	margin: auto;
+	color: white;
+	overflow: hidden;
+}
+
+/* Bakgrunnsbildet er satt i en div for å kunne gi det et filter */
+#backgroundImage {
+	position: absolute;
+	width: 1200px;
+	height: 800px;
+	filter: blur(5px);
+}
+
+.main img {
+	filter: blur(5px);
+}
+/* tekst styling av navn på løsning og animasjon som går infinite linear over main container*/
+.p {
+	position: absolute;
+	font-size: 80px;
+	font-family: "Courier New", Courier, monospace;
+	color: rgb(164, 4, 4);
+	border: 5px solid black;
+	background-color: rgba(50, 50, 50, 50);
+	text-shadow: 1px 1px 1px black;
+}
+
+#textDiv {
+	position: absolute;
+	width: 800px;
+	height: 200px;
+	animation: movetext 3s infinite;
+	animation-timing-function: ease-in-out;
+	margin: auto;
+	left: 250px;
+}
+/* styling av instruksjoner til spillet*/
+.instruksjoner {
+	position: absolute;
+	font-size: 50px;
+	font-family: "Courier New", Courier, monospace;
+	top: 200px;
+	left: 50px;
+	text-align: center;
+}
+/* styling av knapp til å starte spillet*/
+.btn {
+	position: absolute;
+	color: white;
+	top: 550px;
+	font-size: 80px;
+	font-family: "Courier New", Courier, monospace;
+	left: 275px;
+}

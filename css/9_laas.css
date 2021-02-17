@@ -1,0 +1,347 @@
+body{
+    background-color: black;
+}
+
+#container{
+    width: 1200px;
+    height: 800px;
+    margin: auto;
+    position: relative;
+    background-color: #4C4C4C;
+}
+
+/* Alt dette er styling til hvordan låsen skal se ut. */
+
+#c1{
+    width: 280px;
+    height: 280px;
+    position: absolute;
+    margin-top: -260px;
+    margin-left: -65px;
+    border-radius: 100%;
+    background-color: #161616;
+    cursor : not-allowed;
+    z-index: 3;
+}
+
+#c2{
+    width: 130px;
+    height: 340px;
+    position: absolute;
+    margin-left: 10px;
+    background-color: #161616;
+    cursor : not-allowed;
+    z-index: 3;
+}
+
+#c3{
+    width: 110px;
+    height: 500px;
+    position: absolute;
+    margin-left: 20px;
+    margin-top: -160px;
+    background-color: #0F0F0F;
+    cursor : not-allowed;
+    z-index: 4;
+}
+
+#wheel{
+    width: 240px;
+    height: 240px;
+    position: absolute;
+    margin-top: -240px;
+    margin-left: -45px;
+    border-radius: 100%;
+    background-color: #0F0F0F;
+    animation-name: spin;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    z-index: 4;
+}
+
+#lockBottom{
+    width: 150px;
+    height: 350px;
+    position: absolute;
+    margin-top: 370px;
+    margin-left: 500px;
+    background-color: #1C1C1C;
+    cursor : not-allowed;
+    z-index: 2;
+}
+
+#shadow1{
+    width: 160px;
+    height: 350px;
+    position: absolute;
+    margin-top: 370px;
+    margin-left: 495px;
+    background-color: #303030;
+    z-index: 1;
+}
+
+#shadow2{
+    width: 310px;
+    height: 310px;
+    position: absolute;
+    margin-top: 95px;
+    margin-left: 420px;
+    border-radius: 100%;
+    background-color: #303030;
+    cursor : not-allowed;
+    z-index: 1;
+}
+
+#lockTop{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 425px;
+    border-radius: 100%;
+    background-color: #1C1C1C;
+    cursor : not-allowed;
+    z-index: 2;
+}
+
+#lineBottom1{
+    height: 5px;
+    width: 110px;
+    position: absolute;
+    margin-top: 720px;
+    margin-left: 545px;
+    background-color: #303030;
+    z-index: 2;
+}
+
+#lineBottom2{
+    width: 10px;
+    height: 5px;
+    position: absolute;
+    margin-top: 720px;
+    margin-left: 495px;
+    z-index: 2;
+    background-color: #303030;
+}
+
+/* Styling til alle de bevegelige delene i låsen. */
+#s1{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    margin-top: 310px;
+    margin-left: 5px;
+    background-color: #4C4C4C;
+    cursor : n-resize;
+    z-index: 5;
+}
+
+#l1{
+    width: 30px;
+    position: absolute;
+    margin-left: 5px;
+    background-color: #4C4C4C; 
+    opacity: 0;
+    transition: 0.7s;
+}
+
+#s2{
+    width: 40px;
+    height: 40px; 
+    position: absolute;
+    margin-left: -5px;
+    background-color: #4C4C4C;
+    opacity: 0;
+    cursor : e-resize;
+}
+
+#l2{
+    height: 30px;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: -100px;
+    background-color: #4C4C4C; 
+    opacity: 0;
+    transition: 0.7s;
+}
+
+#s3{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    margin-top: -5px;
+    margin-left: 100px;
+    background-color: #4C4C4C;
+    opacity: 0;
+    cursor : n-resize;
+}
+
+#l3{
+    width: 30px;
+    position: absolute;
+    margin-left: 5px;
+    background-color: #4C4C4C; 
+    opacity: 0;
+    transition: 0.7s;
+}
+
+#s4{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    margin-left: -5px;
+    background-color: #4C4C4C;
+    opacity: 0;
+    cursor : w-resize;
+}
+
+#l4{
+    height: 30px;
+    position: absolute;
+    margin-top: 5px;
+    background-color: #4C4C4C;  
+    opacity: 0;
+    transition: 0.7s;
+}
+
+#s5{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    margin-top: -5px;
+    background-color: #4C4C4C; 
+    opacity: 0;
+    cursor : n-resize;
+}
+
+#l5{
+    width: 30px;
+    position: absolute;
+    margin-left: 5px;
+    background-color: #4C4C4C;  
+    opacity: 0;
+    transition: 0.7s;
+}
+
+#s6{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    margin-left: -5px;
+    background-color: #4C4C4C; 
+    opacity: 0;
+    cursor : e-resize;
+}
+
+#l6{
+    height: 30px;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: -55px;
+    background-color: #4C4C4C;
+    opacity: 0;
+    transition: 0.7s;
+}
+
+#s7{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    margin-top: -5px;
+    margin-left: 50px;
+    background-color: #4C4C4C; 
+    opacity: 0;
+    cursor : n-resize;
+}
+
+#l7{
+    width: 30px;
+    position: absolute;
+    margin-left: 5px;
+    background-color: #4C4C4C;
+    opacity: 0;
+    transition: 0.7s;
+}
+
+#s8{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -15px;
+    background-color: green; 
+    opacity: 0;
+    cursor: help;
+    border-radius: 100%;
+}
+
+/* Animasjon til alle de bevegelige delene til låsen (hover-effekt)*/
+#s1:hover > #l1{
+    opacity: 1;
+    height: 140px;
+    margin-top: -100px;
+}
+
+#s1:hover > #l1 > #s2{
+    opacity: 1;
+}
+
+#s2:hover > #l2{
+    opacity: 1;
+    width: 140px;
+    margin-left: 0px;
+}
+
+#s2:hover > #l2 > #s3{
+    opacity: 1;
+}
+
+#s3:hover > #l3{
+    opacity: 1;
+    height: 140px;
+    margin-top: -100px;
+}
+
+#s3:hover > #l3 > #s4{
+    opacity: 1;
+}
+
+#s4:hover > #l4{
+    opacity: 1;
+    width: 140px;
+    margin-left: -100px;
+}
+
+#s4:hover > #l4 > #s5{
+    opacity: 1;
+}
+
+#s5:hover > #l5{
+    opacity: 1;
+    height: 140px;
+    margin-top: -100px;
+}
+
+#s5:hover > #l5 > #s6{
+    opacity: 1;
+}
+
+#s6:hover > #l6{
+    opacity: 1;
+    width: 80px;
+    margin-left: 0px;
+}
+
+#s6:hover > #l6 > #s7{
+    opacity: 1;
+}
+
+#s7:hover > #l7{
+    opacity: 1;
+    height: 170px;
+    margin-top: -130px;
+}
+
+#s7:hover > #l7 > #s8{
+    opacity: 1;
+}

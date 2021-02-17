@@ -1,0 +1,194 @@
+body{
+    background-color: black;
+}
+
+/* main container */
+#mainContainer{
+  position: relative;
+
+  width: 1200px;
+  height: 800px;
+  margin: auto;
+}
+.inMain
+{
+    position: absolute;
+}
+
+/*div for å gruppere og lettere plassere fotavtrykkene.*/
+#avtrykkContainer
+{
+    width: 250px;
+    height: 450px;
+
+    bottom: 0;
+    left: 465px;
+}
+/*animasjon for å vise fotsporene en etter en.*/
+@keyframes avtrykkSynlig
+{
+    0%{opacity: 0.0;}
+    100%{opacity: 1.0;}
+}
+.avtrykk
+{
+    opacity: 0.0;
+}
+/*under er posisjoneringen til alle fotsporene.*/
+#fotavtrykk1
+{
+    left: 170px;
+    bottom: 0px;
+
+    animation-name: avtrykkSynlig;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.0s;
+}
+#fotavtrykk2
+{
+    left: 100px;
+    bottom: 90px;
+
+    transform: scale(0.9, 0.9);
+    animation-name: avtrykkSynlig;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+}
+#fotavtrykk3
+{
+    left: 160px;
+    bottom: 160px;
+
+    transform: scale(0.8, 0.8);
+    animation-name: avtrykkSynlig;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 1.0s;
+}
+#fotavtrykk4
+{
+    left: 110px;
+    bottom: 210px;
+
+    transform: scale(0.7, 0.7);
+    animation-name: avtrykkSynlig;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 1.5s;
+}
+#fotavtrykk5
+{
+    left: 150px;
+    bottom: 250px;
+
+    transform: scale(0.6, 0.6);
+    animation-name: avtrykkSynlig;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 2.0s;
+}
+#fotavtrykk6
+{
+    left: 115px;
+    bottom: 290px;
+
+    transform: scale(0.5, 0.5);
+    animation-name: avtrykkSynlig;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 2.5s;
+}
+#fotavtrykk7
+{
+    left: 140px;
+    bottom: 320px;
+
+    transform: scale(0.4, 0.4);
+    animation-name: avtrykkSynlig;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 3.0s;
+}
+#fotavtrykk8
+{
+    left: 120px;
+    bottom: 350px;
+
+    transform: scale(0.3, 0.3);
+    animation-name: avtrykkSynlig;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 3.5s;
+}
+
+/* Animasjon som gjør at det ser ut som om lyset blinker*/
+.blink
+{
+  position: absolute;
+  z-index: 20;
+  display: inline-block;
+  height: 1px;
+  width: 1px;
+  left: 400px;
+  bottom: 800px;
+  opacity: 0;
+  border-radius: 50%;
+  animation: lightningStrikes 1s linear infinite;
+}
+
+@keyframes lightningStrikes{
+  0% {
+    opacity:0;
+    box-shadow: 200px 200px 500px 200px rgb(218, 199, 172);
+  }
+  20% {
+    opacity:0.3;
+    box-shadow: 200px 200px 500px 200px rgb(218, 199, 172);
+  }
+  40% {
+    opacity:0;
+    box-shadow: 200px 200px 500px 200px rgb(218, 199, 172);
+  }
+  60% {
+    opacity:0.3;
+    box-shadow: 200px 200px 500px 200px rgb(218, 199, 172);
+  }
+  80% {
+    opacity:0.0;
+    box-shadow: 200px 200px 500px 200px rgb(218, 199, 172);
+  }
+  100% {
+    opacity:0;
+    box-shadow: 200px 200px 500px 200px rgb(218, 199, 172);
+  }
+}
+
+/*svart div for utgangen til neste rom. + grønn pil for å gjøre det tydelig.*/
+#exit
+{
+    width: 65px;
+    height: 105px;
+    left: 573px;
+    top: 290px;
+
+    background-color: black;
+}
+#utgangsPil
+{
+    width: 100%;
+    transform: scaleY(-1);
+    top: 20px;
+
+    opacity: 0.0;
+    animation-name: showArrow;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+    animation-delay: 4s;
+}
+@keyframes showArrow
+{
+    0%{opacity: 0.0;}
+    100%{opacity: 1.0;}
+}
